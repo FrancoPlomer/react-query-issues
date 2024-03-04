@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.22.2",
+    "@tanstack/react-query-devtools": "^5.24.0",
+    "axios": "^1.6.7",
     "bootstrap": "5.2.2",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
@@ -17,6 +21,7 @@
     "react-router-dom": "^6.4.2"
   },
   "devDependencies": {
+    "@types/node": "^20.11.24",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@vitejs/plugin-react": "^2.2.0",
