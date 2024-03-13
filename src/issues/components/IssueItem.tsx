@@ -8,6 +8,7 @@ import {
 import { 
     FiCheckCircle, FiInfo, FiMessageSquare 
 } from 'react-icons/fi';
+import { timeSince } from '../../helpers/time-since';
 
 
 interface Props {
@@ -60,7 +61,7 @@ export const IssueItem: FC<Props> = ({ issue }) => {
                     <span>{ issue.title }</span>
                         <span className="issue-subinfo">
                             { 
-                                `#${ issue.number } opened 2 days ago by `
+                                `#${ issue.number } opened ${ timeSince( issue.created_at ) } ago by `
                             }
                         <span className='fw-bold'>
                             { 
@@ -68,6 +69,19 @@ export const IssueItem: FC<Props> = ({ issue }) => {
                             }
                         </span>
                     </span>
+                    <div>
+                        {
+                            issue.labels.map( label => (
+                                <span 
+                                    key={ label.id } 
+                                    className='badge rounded-pill m-1' 
+                                    style={{ background: `#${ label.color }`, color: 'black' }}
+                                >
+                                    { label.name }
+                                </span>
+                            ))
+                        }
+                    </div>
                 </div> 
 
                 <div className='d-flex align-items-center'>
